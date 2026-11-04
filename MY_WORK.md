@@ -132,68 +132,89 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [November 1, 2026, 3:26 AM]
+**What I did**: Set my student ID and prepared the project.
 
 **Details**:
+- Forked and renamed the assignment repository.
+- Updated the student ID in the source code.
+- Ran the original scheduler to observe its behavior.
+- Observed a race condition where both CPU workers selected the same process.
 
-**Challenges**:
+**Challenges**: The original scheduler had a race condition in the shared ready queue.
 
-**Solution**:
+**Solution**: Investigated the queue behavior and identified the need to protect shared queue operations.
 
-**Time spent**:
+**Time spent**: 30 minutes
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [November 1, 2026, 11:26 PM]
+**What I did**: Implemented the Ready Queue Lock.
 
 **Details**:
+- Added a ReentrantLock to protect the shared ready queue.
+- Protected queue operations using lock() and try/finally.
+- Ensured the lock was released using unlock().
 
-**Challenges**:
+**Challenges**: Multiple CPU workers could access the ready queue at the same time.
 
-**Solution**:
+**Solution**: Used a lock to ensure that only one worker could perform the protected queue operation at a time.
 
-**Time spent**:
+**Time spent**: 60 minutes
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 3 - [November 2, 2026, 12:44 PM]
+**What I did**: Implemented the Statistics Locks.
 
 **Details**:
+- Added a lock to protect shared statistics.
+- Protected updates to the context-switch count, completed-process count, and total service time.
+- Protected access to the shared statistics using try/finally.
+- Checked that the observed statistics matched the expected values.
 
-**Challenges**:
+**Challenges**: Multiple CPU workers could update shared counters concurrently.
 
-**Solution**:
+**Solution**: Protected the shared statistics with a lock to prevent inconsistent updates.
 
-**Time spent**:
+**Time spent**: 60 minutes
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
+### Entry 4 - [November 3, 2026, 8:00 AM]
+**What I did**: Implemented the Counting Semaphore.
 
 **Details**:
+- Added a counting semaphore to the ready queue.
+- Released a permit when a process was added.
+- Updated CPU workers to wait using acquire() instead of busy-wait polling.
+- Added wake-up permits to support CPU shutdown.
 
-**Challenges**:
+**Challenges**: CPU workers needed to wait when the ready queue was empty without continuously checking it.
 
-**Solution**:
+**Solution**: Used a counting semaphore to block workers until work became available and to wake them during shutdown.
 
-**Time spent**:
+**Time spent**: 60 minutes
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 5 - [November 4, 2026, 10:20 PM]
+**What I did**: Verified the completed synchronization implementation.
 
 **Details**:
+- Ran the scheduler multiple times.
+- Verified that the context-switch count was 41.
+- Verified that 20 processes completed.
+- Verified that the total service time was 144200.
+- Verified that busy-wait polls were 0.
+- Confirmed that all verification checks passed in the repeated runs.
 
-**Challenges**:
+**Challenges**: I needed to confirm that the synchronization changes worked consistently across multiple runs.
 
-**Solution**:
+**Solution**: Repeated the tests and compared the observed values with the expected verification results.
 
-**Time spent**:
+**Time spent**: 25 minutes
 
 ---
 
@@ -214,13 +235,13 @@
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [4 hours]
 
-**Most challenging part**:
+**Most challenging part**: The hardest part was preventing CPU workers from accessing shared data unsafely. Using a semaphore to replace busy-waiting was also challenging.
 
-**Most interesting learning**:
+**Most interesting learning**: I learned how locks protect shared data and how semaphores coordinate threads.
 
-**What I would do differently next time**:
+**What I would do differently next time**: I would understand the code first, test each feature separately, and record my progress after each session.
 
 ---
 
