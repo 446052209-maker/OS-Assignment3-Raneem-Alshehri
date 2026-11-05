@@ -261,7 +261,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I learned that synchronization protects shared data when multiple threads work together. Without it, race conditions can happen, like when both CPUs picked the same process. I used ReentrantLock with try/finally to protect shared data. I also used a counting semaphore to make CPUs wait for available processes. This helped me understand how threads work safely together.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -269,7 +269,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part was implementing the counting semaphore. I was not sure how CPUs should wait when the ready queue was empty. I had to understand how acquire() and release() work. Waking up the CPUs during shutdown was also difficult. Testing helped me make sure it worked correctly.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -277,7 +277,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I worked on one feature at a time. I read the code to understand what needed to be changed. I ran the program after each change. When errors appeared, I reviewed the code to find the problem. I repeated the tests until all checks passed.]
 
 ## Question 4: Where can synchronization concepts be applied in real-world applications?
 
@@ -285,7 +285,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Synchronization is used in many real applications. Banks use locks to protect account balances during transactions. Ticket systems prevent two people from booking the same seat. Printers use queues to organize print jobs. These examples involve protecting shared resources, just like in this assignment.]
 
 ### Optional: What would you like to learn more about?
 
