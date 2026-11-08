@@ -32,17 +32,17 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [Raneem Dhafer Alshehri] |
+| **Student ID** | [446052209] |
+| **University Email** | [446052209]@std.psau.edu.sa |
+| **GitHub Username** | [446052209-maker] |
+| **Repository Link** | [https://github.com/makopt/OS-Assignment3-Starter-481] |
  
 ---
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: [(https://drive.google.com/file/d/1hPaV3Diw94Bq0ZetQ0ActEjrAp7bGiZc/view?usp=drivesdk)]
 
 > ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
 >
